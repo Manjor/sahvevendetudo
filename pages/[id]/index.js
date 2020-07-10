@@ -23,7 +23,7 @@ class Home extends Component{
         <Head>
           <title>{this.props.repositories.infoCar.Modelo}</title>
           <meta property="og:image" content={this.props.repositories.image_anuncio[0].foto}/> 
-          <meta property="og:description" content={`${this.props.repositories.infoCar.Marca} - ${this.props.repositories.infoCar.Modelo} - ${this.props.repositories.valor}` }/>
+          <meta property="og:description" content={`${this.props.repositories.infoCar.Marca} - ${this.props.repositories.infoCar.Modelo} - R$ ${this.props.repositories.valor}` }/>
           <meta property="og:site_name" content="VendeTudo.com"/>
         </Head>
       </>
