@@ -20,7 +20,8 @@ export default class Home extends Component {
       <>
         <Head>
           <title>{this.props.repositories.infoCar.Modelo}</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />  
+          <meta property="og:image" content={this.props.repositories.image_anuncio[0].foto}/> 
+          <meta property="og:description" content={`${this.props.repositories.infoCar.Marca} - ${this.props.repositories.infoCar.Modelo} - ${this.props.repositories.valor}` }/>
         </Head>
       </>
     );
