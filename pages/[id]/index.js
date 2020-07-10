@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import Head from 'next/head'
-
+import { useRouter } from 'next/router'
 import "isomorphic-fetch";
 
-export default class Home extends Component {
-  static getInitialProps = async () => {
+
+class Home extends Component{
+  
+  static getInitialProps = async (ctx) => {
     const response = await fetch(
-      "https://vende-tudo-api-django.herokuapp.com/anuncios/503/"
+      `https://vende-tudo-api-django.herokuapp.com/anuncios/${ctx.query.id}/`
     );
     return { repositories: await response.json() };
   };
 
-  componentDidMount = () =>{
-    window.location.href = 'https://vendetudo.com/anuncio/detalhe/503/'
+  componentDidMount = async () =>{
+    window.location.href = await `https://vendetudo.com/anuncio/detalhe/${this.props.repositories.id}/`
   }
 
   render() {
@@ -27,3 +29,5 @@ export default class Home extends Component {
     );
   }
 }
+
+export default Home
